@@ -4,8 +4,10 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useRef, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface ProductCardProps {
+  id: number;
   name: string;
   price: string;
   category: string;
@@ -13,7 +15,8 @@ interface ProductCardProps {
   hoverImageUrl?: string;
 }
 
-export default function ProductCard({ name, price, category, imageUrl, hoverImageUrl }: ProductCardProps) {
+export default function ProductCard({ id, name, price, category, imageUrl, hoverImageUrl }: ProductCardProps) {
+  const router = useRouter();
   const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -35,10 +38,21 @@ export default function ProductCard({ name, price, category, imageUrl, hoverImag
     mouseY.set(e.clientY - rect.top);
   };
 
+  const handleClick = () => {
+    // Dispatch event to trigger thread transition
+    window.dispatchEvent(new CustomEvent("triggerThreadTransition"));
+
+    // Wait for the animation to cover the screen before navigating
+    setTimeout(() => {
+      router.push(`/product/${id}`);
+    }, 1200);
+  };
+
   return (
     <motion.div
       ref={cardRef}
-      className="group relative flex flex-col border-r border-b border-white/10 overflow-hidden bg-black"
+      onClick={handleClick}
+      className="group relative flex flex-col border-r border-b border-white/10 overflow-hidden bg-black cursor-pointer"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -46,25 +60,27 @@ export default function ProductCard({ name, price, category, imageUrl, hoverImag
       whileHover="hover"
     >
       <div className="relative aspect-[4/5] w-full overflow-hidden cursor-none">
-        {/* Base Image */}
-        <motion.div
-          className="absolute inset-0 h-full w-full"
-          variants={{
-            initial: { scale: 1 },
-            hover: { scale: 1.05 }
-          }}
-          transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-        >
-          <Image
-            src={imageUrl}
-            alt={name}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-        </motion.div>
+        {/* Base Image Container */}
+        <div className="absolute inset-0 w-full h-full">
+          <motion.div
+            className="relative h-full w-full"
+            variants={{
+              initial: { scale: 1 },
+              hover: { scale: 1.05 }
+            }}
+            transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
+          >
+            <Image
+              src={imageUrl}
+              alt={name}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </motion.div>
+        </div>
 
-        {/* Hover Image (Cross-fade) */}
+        {/* Hover Image Container (Cross-fade) */}
         {hoverImageUrl && (
           <motion.div
             className="absolute inset-0 h-full w-full z-10"
@@ -73,7 +89,7 @@ export default function ProductCard({ name, price, category, imageUrl, hoverImag
             transition={{ duration: 0.4, ease: "easeInOut" }}
           >
             <motion.div
-               className="h-full w-full"
+               className="relative h-full w-full"
                variants={{
                  initial: { scale: 1 },
                  hover: { scale: 1.05 }

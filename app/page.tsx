@@ -7,7 +7,7 @@ const products = [
     price: "$85.00",
     category: "Heavyweight Fleece",
     imageUrl: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1287&auto=format&fit=crop",
-    hoverImageUrl: "https://images.unsplash.com/photo-1556821840-27c4375AD06c?q=80&w=1287&auto=format&fit=crop"
+    hoverImageUrl: "https://images.unsplash.com/photo-1556821840-d1645567346b?q=80&w=1287&auto=format&fit=crop"
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const products = [
     price: "$45.00",
     category: "Premium Cotton",
     imageUrl: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1287&auto=format&fit=crop",
-    hoverImageUrl: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1287&auto=format&fit=crop"
+    hoverImageUrl: "https://images.unsplash.com/photo-1503341503653-ff4f0ae9144b?q=80&w=1287&auto=format&fit=crop"
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ const products = [
     price: "$120.00",
     category: "Limited Edition",
     imageUrl: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=1336&auto=format&fit=crop",
-    hoverImageUrl: "https://images.unsplash.com/photo-1591047139500-641508930438?q=80&w=1336&auto=format&fit=crop"
+    hoverImageUrl: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?q=80&w=1336&auto=format&fit=crop"
   }
 ];
 
@@ -73,6 +73,7 @@ export default function Home() {
         {products.map((product) => (
           <ProductCard
             key={product.id}
+            id={product.id}
             name={product.name}
             price={product.price}
             category={product.category}
