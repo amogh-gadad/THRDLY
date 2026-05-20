@@ -1,9 +1,8 @@
 "use client";
 
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { ArrowLeft, ShoppingBag } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const products = [
@@ -72,7 +71,7 @@ export default function ProductDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white px-6 py-12 md:py-24">
+    <div className="min-h-screen bg-background text-foreground px-6 py-12 md:py-24">
       <div className="max-w-6xl mx-auto">
         <button
           onClick={handleBack}
@@ -83,7 +82,7 @@ export default function ProductDetail() {
         </button>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <div className="relative aspect-[4/5] border border-white/10 overflow-hidden bg-white/5">
+          <div className="relative aspect-[4/5] border border-border overflow-hidden bg-card-bg">
             <Image
               src={product.imageUrl}
               alt={product.name}
@@ -107,12 +106,12 @@ export default function ProductDetail() {
               {product.description}
             </p>
 
-            <button className="bg-white text-black py-4 px-8 font-bold uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-accent hover:text-white transition-colors">
+            <button className="bg-foreground text-background py-4 px-8 font-bold uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-accent hover:text-white transition-colors">
               <ShoppingBag className="w-5 h-5" />
               Add to Bag
             </button>
 
-            <div className="mt-16 grid grid-cols-2 gap-8 border-t border-white/10 pt-8">
+            <div className="mt-16 grid grid-cols-2 gap-8 border-t border-border pt-8">
               <div>
                 <h3 className="text-[10px] uppercase tracking-widest text-muted mb-2 font-bold">Materials</h3>
                 <p className="text-sm">Premium Sourced Cotton</p>

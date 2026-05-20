@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="px-6 py-24 md:py-40 border-b border-white/10">
+      <section className="px-6 py-24 md:py-40 border-b border-border bg-background">
         <div className="max-w-4xl">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9]">
             THREADED <br />
@@ -69,7 +69,7 @@ export default function Home() {
       </section>
 
       {/* Product Grid */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-white/5">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-card-bg">
         {products.map((product) => (
           <ProductCard
             key={product.id}
@@ -84,7 +84,7 @@ export default function Home() {
       </section>
 
       {/* Brand Statement */}
-      <section className="px-6 py-32 flex flex-col md:flex-row items-end justify-between gap-12">
+      <section className="px-6 py-32 flex flex-col md:flex-row items-end justify-between gap-12 bg-background">
         <div className="max-w-xl">
           <h2 className="text-4xl font-bold tracking-tighter mb-6 uppercase">Made to be worn. <br />Or judged. Or both.</h2>
           <p className="text-muted leading-relaxed uppercase text-xs tracking-widest font-bold">

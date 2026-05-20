@@ -52,7 +52,7 @@ export default function ProductCard({ id, name, price, category, imageUrl, hover
     <motion.div
       ref={cardRef}
       onClick={handleClick}
-      className="group relative flex flex-col border-r border-b border-white/10 overflow-hidden bg-black cursor-pointer"
+      className="group relative flex flex-col border-r border-b border-border overflow-hidden bg-background cursor-pointer"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -132,7 +132,7 @@ export default function ProductCard({ id, name, price, category, imageUrl, hover
         </motion.div>
       </div>
 
-      <div className="p-6 flex flex-col gap-1 bg-black z-10">
+      <div className="p-6 flex flex-col gap-1 bg-background z-10">
         <div className="flex justify-between items-start">
           <h3 className="text-lg font-medium tracking-tight uppercase">{name}</h3>
           <span className="text-lg font-medium tracking-tight text-accent">{price}</span>

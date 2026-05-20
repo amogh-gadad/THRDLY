@@ -5,6 +5,17 @@
   --foreground: #ffffff;
   --accent: #ff0000;
   --muted: #888888;
+  --border: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='light'] {
+  --background: #ffffff;
+  --foreground: #000000;
+  --accent: #ff0000;
+  --muted: #666666;
+  --border: rgba(0, 0, 0, 0.1);
+  --card-bg: rgba(0, 0, 0, 0.02);
 }
 
 @theme inline {
@@ -12,6 +23,8 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card-bg: var(--card-bg);
   --font-sans: "Inter", var(--font-geist-sans);
 }
 
@@ -21,11 +34,12 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
   background-color: var(--accent);
-  color: var(--foreground);
+  color: #fff;
 }
 
 /* Minimalist scrollbar */
@@ -38,7 +52,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #222;
+  background: var(--muted);
 }
 
 ::-webkit-scrollbar-thumb:hover {
