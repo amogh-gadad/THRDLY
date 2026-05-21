@@ -9,11 +9,11 @@ export default function Footer() {
     <footer className="px-6 py-12 border-t border-border bg-background">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
         <div>
-          <div className="text-2xl font-bold tracking-tighter mb-2">
-            THRDLY<span className="text-accent">®</span>
+          <div className="mb-4">
+            <img src="/logo.png" alt="THRDLY" className="h-8 md:h-10 w-auto dark:invert" />
           </div>
           <p className="text-xs text-muted uppercase tracking-widest">
-            Numerical Embroidery Systems © 2025
+            Numerical Embroidery Systems © 2024
           </p>
         </div>
 

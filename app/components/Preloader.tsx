@@ -106,8 +106,11 @@ export default function Preloader() {
             />
           </div>
 
-          <div className="absolute bottom-6 text-[9px] uppercase tracking-[0.5em] text-white/20 font-medium">
-            THRDLY© Est. 2024 • Numerical Embroidery Systems
+          <div className="absolute bottom-6 flex flex-col items-center gap-2">
+            <img src="/logo.png" alt="THRDLY" className="h-4 w-auto invert opacity-20" />
+            <div className="text-[9px] uppercase tracking-[0.5em] text-white/20 font-medium">
+              Numerical Embroidery Systems • Est. 2024
+            </div>
           </div>
         </motion.div>
       )}

@@ -35,21 +35,33 @@ export default function Navbar() {
     }, 1200);
   };
 
-  // Close menu when clicking outside
+  // Close menu when clicking outside or pressing Escape
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setIsMenuOpen(false);
       }
     };
+
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
+
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    window.addEventListener("keydown", handleEsc);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("keydown", handleEsc);
+    };
   }, []);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[60] flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur-md border-b border-border">
-      <Link href="/" onClick={(e) => handleNav(e, "/")} className="text-xl font-bold tracking-tighter">
-        THRDLY<span className="text-accent">®</span>
+      <Link href="/" onClick={(e) => handleNav(e, "/")} className="h-6 md:h-8 block">
+        <img src="/logo.png" alt="THRDLY" className="h-full w-auto dark:invert transition-all" />
       </Link>
 
       <div className="flex items-center gap-6 text-sm font-medium">
@@ -63,10 +75,15 @@ export default function Navbar() {
         {/* Menu Dropdown Container */}
         <div className="relative" ref={menuRef}>
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex items-center gap-1 uppercase hover:text-accent transition-colors cursor-pointer group py-2"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            aria-expanded={isMenuOpen}
+            aria-haspopup="true"
+            className="flex items-center gap-1 uppercase hover:text-accent transition-colors cursor-pointer group py-2 px-1 focus:outline-none"
           >
-            Menu
+            <span className="relative">
+              Menu
+              <span className={`absolute -bottom-1 left-0 w-full h-[1px] bg-accent transition-transform duration-300 origin-left ${isMenuOpen ? 'scale-x-100' : 'scale-x-0'}`} />
+            </span>
             <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isMenuOpen ? 'rotate-180' : ''}`} />
           </button>
 
@@ -124,7 +141,7 @@ export default function Navbar() {
                   </div>
 
                   <div className="px-6 py-4 border-t border-border bg-card-bg/20 text-[9px] uppercase tracking-[0.3em] text-muted font-bold flex justify-between">
-                    <span>Est. 2025</span>
+                    <span>Est. 2024</span>
                     <span>THRDLY®</span>
                   </div>
                 </div>

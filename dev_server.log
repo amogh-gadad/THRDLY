@@ -1,0 +1,57 @@
+
+> tmp@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+✓ Ready in 488ms
+
+ GET / 200 in 1469ms (next.js: 608ms, application-code: 861ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1503341503653-ff4f0ae9144b?q=80&w=1287&auto=format&fit=crop 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1556821840-d1645567346b?q=80&w=1287&auto=format&fit=crop 404
+ GET / 200 in 119ms (next.js: 5ms, application-code: 113ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1556821840-d1645567346b?q=80&w=1287&auto=format&fit=crop 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1503341503653-ff4f0ae9144b?q=80&w=1287&auto=format&fit=crop 404
+[browser] Image with src "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1372&auto=format&fit=crop" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+ GET / 200 in 96ms (next.js: 4ms, application-code: 92ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1503341503653-ff4f0ae9144b?q=80&w=1287&auto=format&fit=crop 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1556821840-d1645567346b?q=80&w=1287&auto=format&fit=crop 404
+[browser] Image with src "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1372&auto=format&fit=crop" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+ GET / 200 in 230ms (next.js: 4ms, application-code: 227ms)
+ GET / 200 in 167ms (next.js: 5ms, application-code: 162ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1556821840-d1645567346b?q=80&w=1287&auto=format&fit=crop 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1503341503653-ff4f0ae9144b?q=80&w=1287&auto=format&fit=crop 404
+ GET / 200 in 94ms (next.js: 4ms, application-code: 90ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1556821840-d1645567346b?q=80&w=1287&auto=format&fit=crop 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1503341503653-ff4f0ae9144b?q=80&w=1287&auto=format&fit=crop 404
+[browser] Image with src "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1372&auto=format&fit=crop" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+ GET /product/1 200 in 1211ms (next.js: 1136ms, application-code: 74ms)
+[browser] Image with src "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1287&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+ GET / 200 in 45ms (next.js: 4ms, application-code: 41ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1503341503653-ff4f0ae9144b?q=80&w=1287&auto=format&fit=crop 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1556821840-d1645567346b?q=80&w=1287&auto=format&fit=crop 404
+ GET / 200 in 90ms (next.js: 4ms, application-code: 86ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1556821840-d1645567346b?q=80&w=1287&auto=format&fit=crop 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1503341503653-ff4f0ae9144b?q=80&w=1287&auto=format&fit=crop 404
+ GET / 200 in 99ms (next.js: 5ms, application-code: 94ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1556821840-d1645567346b?q=80&w=1287&auto=format&fit=crop 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1503341503653-ff4f0ae9144b?q=80&w=1287&auto=format&fit=crop 404
+[browser] Image with src "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1372&auto=format&fit=crop" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+ GET / 200 in 94ms (next.js: 3ms, application-code: 90ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1556821840-d1645567346b?q=80&w=1287&auto=format&fit=crop 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1503341503653-ff4f0ae9144b?q=80&w=1287&auto=format&fit=crop 404
+ GET /product/1 200 in 89ms (next.js: 20ms, application-code: 69ms)
+[browser] Image with src "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1287&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+ GET / 200 in 28ms (next.js: 2ms, application-code: 26ms)
+ GET / 200 in 87ms (next.js: 3ms, application-code: 85ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1556821840-d1645567346b?q=80&w=1287&auto=format&fit=crop 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1503341503653-ff4f0ae9144b?q=80&w=1287&auto=format&fit=crop 404
+[browser] Image with src "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1372&auto=format&fit=crop" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+ GET /product/1 200 in 66ms (next.js: 25ms, application-code: 41ms)
+[browser] Image with src "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1287&auto=format&fit=crop" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
